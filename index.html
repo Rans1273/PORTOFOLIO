@@ -1,89 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nama Kamu | Portofolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <nav>
-        <div class="logo">NamaKamu.</div>
-        <ul class="nav-links">
-            <li><a href="#about">Tentang Saya</a></li>
-            <li><a href="#projects">Projek</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-        <button id="theme-toggle">🌙</button>
-    </nav>
+    <title>Nama Kamu | Portofolio Bootstrap</title>
     
-    <header id="hero">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-body-tertiary">
+
+    <div id="particles-js"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Asran</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+                <button id="theme-toggle" class="btn ms-3"><i class="bi bi-moon-stars-fill"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="d-flex flex-column justify-content-center align-items-center text-center">
+        <img src="assets/user/profil.png" alt="Foto Saya" class="hero-photo">
         <div class="hero-content">
-            <h1 class="fade-in">Halo, saya [Nama Kamu]</h1>
-            <p class="fade-in">Seorang Web Developer yang bersemangat menciptakan aplikasi web yang fungsional dan indah.</p>
-            <a href="#projects" class="cta-button fade-in">Lihat Karya Saya</a>
+            <h1 class="display-4 fw-bold">Halo, saya Asran</h1>
+            <p class="lead col-md-8 mx-auto">Seorang Web Developer yang bersemangat menciptakan aplikasi web yang fungsional dan indah.</p>
+            <a href="#projects" class="btn btn-primary btn-lg mt-3">Lihat Karya Saya</a>
         </div>
     </header>
 
     <main>
-        <section id="about" class="hidden">
-            <h2>Tentang Saya</h2>
-            <div class="about-content">
-                <img src="images/profile.jpg" alt="Foto Profil Kamu" class="profile-pic">
-                <p>Tuliskan deskripsi singkat tentang dirimu di sini. Ceritakan passion-mu dalam teknologi, pengalaman belajar, atau teknologi apa saja yang sedang kamu dalami. Buat semenarik mungkin!</p>
-            </div>
-        </section>
-
-        <section id="projects" class="hidden">
-            <h2>Projek Terbaru</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="images/project1.png" alt="Gambar Projek 1">
-                    <h3>Nama Projek 1</h3>
-                    <p>Deskripsi singkat tentang projek ini, teknologi yang digunakan (misal: HTML, CSS, React), dan tantangan yang dihadapi.</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Kode GitHub</a>
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Tentang Saya</h2>
+                <div class="row align-items-center gy-4">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/user/profil.png" alt="Foto Profil" class="img-fluid rounded-circle shadow profile-pic">
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/project2.png" alt="Gambar Projek 2">
-                    <h3>Nama Projek 2</h3>
-                    <p>Deskripsi singkat tentang projek ini, teknologi yang digunakan, dan apa yang kamu pelajari dari projek ini.</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Kode GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/project3.png" alt="Gambar Projek 3">
-                    <h3>Nama Projek 3</h3>
-                    <p>Deskripsi singkat tentang projek ini, mungkin ini adalah projek favoritmu atau yang paling kompleks.</p>
-                    <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Kode GitHub</a>
+                    <div class="col-md-8">
+                        <p>Tuliskan deskripsi singkat tentang dirimu di sini. Dengan Bootstrap, layout ini menjadi responsif secara otomatis tanpa perlu CSS tambahan. Ini memungkinkan kita fokus pada konten yang penting.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="hidden">
-            <h2>Hubungi Saya</h2>
-            <p>Tertarik untuk bekerja sama? Hubungi saya melalui platform di bawah ini!</p>
-            <div class="contact-links">
-                <a href="mailto:emailkamu@example.com">Email</a>
-                <a href="https://linkedin.com/in/usernamekamu" target="_blank">LinkedIn</a>
-                <a href="https://github.com/usernamekamu" target="_blank">GitHub</a>
+        <section id="projects" class="py-5 bg-body">
+            <div class="container">
+                <h2 class="text-center mb-5">Projek Terbaru</h2>
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <img src="assets/projek/1.jpg" class="card-img-top" alt="Projek 1">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Nama Projek 1</h5>
+                                <p class="card-text">Komponen Card dari Bootstrap membuat tampilan projek menjadi rapi dan konsisten.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <img src="assets/projek/1.jpg" class="card-img-top" alt="Projek 2">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Nama Projek 2</h5>
+                                <p class="card-text">Class `h-100` memastikan setiap kartu memiliki tinggi yang sama.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <img src="assets/projek/1.jpg" class="card-img-top" alt="Projek 3">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Nama Projek 3</h5>
+                                <p class="card-text">Grid ini akan otomatis menyesuaikan jumlah kolom di layar kecil.</p>
+                                <a href="#" class="btn btn-outline-primary mt-auto">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 text-center">
+            <div class="container">
+                <h2>Hubungi Saya</h2>
+                <p class="lead">Tertarik untuk bekerja sama? Hubungi saya melalui platform di bawah ini!</p>
+                <div class="mt-4">
+                    <a href="mailto:emailkamu@example.com" class="btn btn-primary btn-lg mx-2 my-2">Email</a>
+                    <a href="https://linkedin.com/in/usernamekamu" class="btn btn-outline-primary btn-lg mx-2 my-2" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/usernamekamu" class="btn btn-outline-secondary btn-lg mx-2 my-2" target="_blank">GitHub</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 [Nama Kamu]. Dibuat dengan ❤️.</p>
+    <footer class="text-center py-4 bg-body">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Asran. Dibuat dengan Bootstrap.</p>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

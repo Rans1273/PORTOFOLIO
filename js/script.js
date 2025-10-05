@@ -1,50 +1,74 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- THEME SWITCHER ---
+    let particlesInstance = null;
+    const htmlElement = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+    
+    // --- KONFIGURASI DAN INISIALISASI TSPARTICLES ---
+    const particleConfig = {
+        fpsLimit: 60,
+        interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+            modes: { repulse: { distance: 100, duration: 0.4 } },
+        },
+        particles: {
+            color: { value: "#ffffff" },
+            links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.2, width: 1 },
+            collisions: { enable: true },
+            move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 1.5, straight: false },
+            number: { density: { enable: true, area: 800 }, value: 80 },
+            opacity: { value: 0.2 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 5 } },
+        },
+        detectRetina: true,
+    };
 
-    // Fungsi untuk menerapkan tema berdasarkan pilihan yang tersimpan
-    function applyTheme(theme) {
-        if (theme === 'light') {
-            body.classList.add('light-mode');
-            themeToggle.textContent = '☀️'; // Ganti ikon ke matahari
-        } else {
-            body.classList.remove('light-mode');
-            themeToggle.textContent = '🌙'; // Ganti ikon ke bulan
+    tsParticles.load("particles-js", particleConfig).then(container => {
+        particlesInstance = container;
+        // Terapkan tema yang benar pada partikel saat pertama kali dimuat
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        updateParticleColors(savedTheme);
+    });
+
+    // --- BOOTSTRAP 5 THEME SWITCHER ---
+    const updateParticleColors = (theme) => {
+        if (particlesInstance) {
+            const color = theme === 'dark' ? '#ffffff' : '#333333';
+            particlesInstance.options.particles.color.value = color;
+            particlesInstance.options.particles.links.color = color;
+            particlesInstance.refresh();
         }
-    }
+    };
 
-    // Cek tema yang tersimpan di localStorage saat halaman dimuat
-    const savedTheme = localStorage.getItem('theme') || 'dark'; // Default ke dark
+    const applyTheme = (theme) => {
+        htmlElement.setAttribute('data-bs-theme', theme);
+        const iconClass = theme === 'dark' ? 'bi-moon-stars-fill' : 'bi-sun-fill';
+        themeToggle.innerHTML = `<i class="bi ${iconClass}"></i>`;
+        updateParticleColors(theme);
+    };
+
+    // Cek tema dari localStorage saat halaman dimuat
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
     // Event listener untuk tombol toggle
     themeToggle.addEventListener('click', () => {
-        let newTheme;
-        if (body.classList.contains('light-mode')) {
-            newTheme = 'dark';
-        } else {
-            newTheme = 'light';
-        }
-        localStorage.setItem('theme', newTheme); // Simpan pilihan baru
-        applyTheme(newTheme); // Terapkan tema baru
+        const currentTheme = htmlElement.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
     });
 
-
-    // --- SCROLL ANIMATION ---
+    // --- SCROLL ANIMATION (tetap sama) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
-    }, {
-        threshold: 0.1 // Muncul saat 10% elemen terlihat
-    });
+    }, { threshold: 0.1 });
 
-    // Ambil semua section yang punya class 'hidden' dan amati
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach(el => observer.observe(el));
-
 });
