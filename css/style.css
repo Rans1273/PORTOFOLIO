@@ -100,4 +100,32 @@ html {
 .hidden.col-md-6:nth-child(3) {
     transition-delay: 0.3s;
 }
-/* Anda bisa melanjutkan pola ini jika punya lebih dari 3 projek */
+
+/* css/style.css */
+
+/* --- STYLE UNTUK HALAMAN DETAIL PROYEK --- */
+
+/* Membuat gambar di carousel tidak terlalu tinggi di layar besar */
+.carousel-item img {
+    max-height: 550px;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Memberi garis bawah yang halus pada judul bagian */
+.case-study-content h3 {
+    border-bottom: 2px solid var(--bs-primary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Menghilangkan background pada list-group agar menyatu */
+.list-group-item {
+    background-color: transparent;
+    border-color: var(--bs-border-color-translucent);
+}
+
+.badge.lh-lg {
+    padding-top: .6em;
+    padding-bottom: .6em;
+}

@@ -14,6 +14,8 @@
 </head>
 <body class="bg-body-tertiary">
 
+    <div id="particles-js"></div>
+
     <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../index.html">Asran</a>
@@ -37,39 +39,89 @@
     <main class="container my-5">
         <header class="text-center mb-5">
             <h1 class="display-4 fw-bold">Aplikasi Resep Makanan</h1>
-            <p class="lead text-secondary">Studi kasus tentang perancangan dan pengembangan aplikasi mobile lintas platform.</p>
+            <p class="lead text-body-secondary">Studi kasus pengembangan aplikasi mobile lintas platform.</p>
         </header>
 
-        <img src="../assets/projek/1.jpg" alt="Detail Projek Aplikasi Resep" class="img-fluid rounded shadow-lg mb-5">
+        <div id="projectCarousel" class="carousel slide shadow-lg mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner rounded">
+                <div class="carousel-item active">
+                    <img src="../assets/projek/1.jpg" class="d-block w-100" alt="Tampilan 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/projek/1.jpg" class="d-block w-100" alt="Tampilan 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="../assets/projek/1.jpg" class="d-block w-100" alt="Tampilan 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
         <div class="row g-5">
             <div class="col-lg-8">
-                <article>
-                    <h3 class="mb-3">Tujuan Proyek</h3>
-                    <p>Tujuan utama dari proyek ini adalah untuk menciptakan sebuah aplikasi mobile yang intuitif bagi pengguna untuk mencari, menyimpan, dan membagikan resep masakan. Aplikasi ini dirancang untuk mengatasi kesulitan pengguna dalam menemukan resep yang terverifikasi dan mudah diikuti.</p>
+                <article class="case-study-content">
+                    <section class="mb-5">
+                        <h3 class="mb-3">Ringkasan Proyek</h3>
+                        <p>Aplikasi Resep Makanan adalah sebuah aplikasi mobile yang dirancang untuk membantu pengguna menemukan, menyimpan, dan berbagi resep masakan dengan mudah. Proyek ini dibangun dari awal, mencakup tahap perencanaan, desain UI/UX, pengembangan, hingga pengujian.</p>
+                    </section>
                     
-                    <h3 class="mt-5 mb-3">Proses & Tantangan</h3>
-                    <p>Proyek ini dimulai dengan riset pengguna untuk memahami fitur apa yang paling dibutuhkan. Salah satu tantangan terbesar adalah mengelola state management di Flutter secara efisien agar aplikasi tetap cepat dan responsif meskipun dengan data resep yang banyak. Saya berhasil mengatasinya dengan mengimplementasikan provider state management.</p>
-                    <p>Saya juga bertanggung jawab penuh mulai dari desain UI/UX di Figma hingga pengembangan fungsionalitas utama seperti fitur pencarian dan halaman detail resep.</p>
+                    <section class="mb-5">
+                        <h3 class="mb-3">Tantangan</h3>
+                        <p>Tantangan utama dalam proyek ini adalah menciptakan pengalaman pengguna yang mulus dan cepat, terutama dalam mengelola dan menampilkan data resep yang sangat banyak. Mengoptimalkan performa aplikasi di berbagai perangkat menjadi fokus utama selama pengembangan.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="mb-3">Fitur Utama & Solusi</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Pencarian Cepat:</strong> Mengimplementasikan algoritma pencarian yang efisien di sisi backend.</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>State Management:</strong> Menggunakan Provider di Flutter untuk manajemen state yang efektif.</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Desain Responsif:</strong> Memastikan UI/UX dapat beradaptasi dengan baik di berbagai ukuran layar.</li>
+                        </ul>
+                    </section>
                 </article>
             </div>
 
             <div class="col-lg-4">
-                <div class="card sticky-top" style="top: 120px;">
+                <div class="card sticky-top shadow-sm" style="top: 100px;">
                     <div class="card-body">
-                        <h5 class="card-title mb-3">Teknologi yang Digunakan</h5>
+                        <h5 class="card-title border-bottom pb-2 mb-3">Informasi Proyek</h5>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <strong>Peran Saya</strong>
+                                <span>Full-Stack</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <strong>Klien</strong>
+                                <span>Proyek Pribadi</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <strong>Tahun</strong>
+                                <span>2025</span>
+                            </li>
+                        </ul>
+                        
+                        <h5 class="card-title border-bottom pb-2 mb-3">Teknologi</h5>
                         <div class="tech-stack mb-4">
-                            <span class="badge text-bg-primary fs-6"><i class="devicon-flutter-plain me-1"></i> Flutter</span>
-                            <span class="badge text-bg-secondary fs-6"><i class="devicon-laravel-plain me-1"></i> Laravel</span>
-                            <span class="badge text-bg-info fs-6"><i class="devicon-mysql-plain me-1"></i> MySQL</span>
+                            <span class="badge lh-lg text-bg-primary"><i class="devicon-flutter-plain me-1"></i> Flutter</span>
+                            <span class="badge lh-lg text-bg-secondary"><i class="devicon-laravel-plain me-1"></i> Laravel</span>
+                            <span class="badge lh-lg text-bg-info text-dark"><i class="devicon-mysql-plain me-1"></i> MySQL</span>
                         </div>
                         
-                        <h5 class="card-title mb-3">Peran Saya</h5>
-                        <p>Full-Stack Mobile Developer</p>
-                        
                         <div class="d-grid gap-2 mt-4">
-                            <a href="#" class="btn btn-primary" target="_blank"><i class="bi bi-eye me-2"></i>Lihat Live Demo</a>
-                            <a href="#" class="btn btn-outline-secondary" target="_blank"><i class="bi bi-github me-2"></i>Lihat Kode</a>
+                            <a href="#" class="btn btn-primary btn-lg" target="_blank"><i class="bi bi-eye me-2"></i>Live Demo</a>
+                            <a href="#" class="btn btn-outline-secondary btn-lg" target="_blank"><i class="bi bi-github me-2"></i>Lihat Kode</a>
                         </div>
                     </div>
                 </div>
@@ -80,11 +132,12 @@
     <footer class="text-center py-4 mt-5 bg-body">
         <div class="container">
             <a href="../index.html#projects" class="text-decoration-none">← Kembali ke Semua Projek</a>
-            <p class="mt-2 mb-0 text-secondary">&copy; 2025 Asran.</p>
+            <p class="mt-2 mb-0 text-body-secondary">&copy; 2025 Asran.</p>
         </div>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>
